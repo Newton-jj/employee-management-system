@@ -1,0 +1,62 @@
+<!-- Search Bar -->
+
+
+
+
+<div class="d-flex justify-content-between mb-4">
+
+    <h2>Employee List</h2>
+    <h2><%= totalEmployees %></h2>
+
+    <form action="/employees/search"
+          method="GET"
+          class="d-flex">
+
+        <input type="text"
+               name="search"
+               class="form-control me-2"
+               placeholder="Search employee">
+
+        <button class="btn btn-dark">
+            Search
+        </button>
+
+    </form>
+
+</div>
+
+<div class="mt-4">
+
+    <a href="/employees"
+       class="btn btn-dark">
+
+       Manage Employees
+
+    </a>
+
+</div>
+
+<table class="table table-hover table-bordered">
+
+    <thead class="table-dark">
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Position</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+
+    </thead>
+    <a href="/logout"
+   class="sidebar-link">
+
+   Logout
+
+</a>
+
+
+</table>

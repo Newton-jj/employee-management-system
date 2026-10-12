@@ -1,0 +1,14 @@
+node_modules/
+dist/
+dist-ssr/
+.env
+.env.*
+!.env.example
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+Backend/public/css/uploads/*
+!Backend/public/css/uploads/.gitkeep
+.DS_Store
+Thumbs.db

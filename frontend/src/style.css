@@ -1,0 +1,725 @@
+body {
+
+    background: #f4f7fc;
+
+    font-family: Arial, sans-serif;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+
+    width: 250px;
+
+    min-height: 100vh;
+
+    background: #111827;
+
+    color: white;
+
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link {
+
+    color: #d1d5db;
+
+    margin-bottom: 10px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.sidebar .nav-link:hover {
+
+    background: #1f2937;
+
+    color: white;
+}
+
+/* TOPBAR */
+
+.topbar {
+
+    background: white;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.notification-wrapper {
+
+    position: relative;
+}
+
+.notification-button {
+
+    position: relative;
+
+    width: 40px;
+
+    height: 40px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    background: white;
+
+    color: #111827;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.notification-badge {
+
+    position: absolute;
+
+    top: -6px;
+
+    right: -6px;
+
+    min-width: 20px;
+
+    height: 20px;
+
+    padding: 0 5px;
+
+    border-radius: 999px;
+
+    background: #dc3545;
+
+    color: white;
+
+    font-size: 12px;
+
+    line-height: 20px;
+
+    text-align: center;
+}
+
+.notification-panel {
+
+    position: absolute;
+
+    top: 48px;
+
+    right: 0;
+
+    z-index: 20;
+
+    width: min(360px, 90vw);
+
+    max-height: 420px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    background: white;
+
+    overflow: hidden;
+}
+
+.notification-panel-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.notification-panel-header small {
+
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+.notification-mark-all {
+
+    width: 34px;
+
+    height: 34px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    background: #f9fafb;
+
+    color: #111827;
+}
+
+.notification-list {
+
+    max-height: 340px;
+
+    overflow-y: auto;
+}
+
+.notification-item {
+
+    width: 100%;
+
+    border: 0;
+
+    border-bottom: 1px solid #f3f4f6;
+
+    background: white;
+
+    padding: 12px 14px;
+
+    text-align: left;
+
+    color: #111827;
+}
+
+.notification-item.unread {
+
+    background: #eff6ff;
+}
+
+.notification-item span {
+
+    display: block;
+
+    font-weight: 700;
+
+    margin-bottom: 4px;
+}
+
+.notification-item p {
+
+    margin: 0 0 4px;
+
+    color: #4b5563;
+
+    font-size: 14px;
+}
+
+.notification-item small {
+
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+.notification-empty {
+
+    padding: 24px 14px;
+
+    color: #6b7280;
+
+    text-align: center;
+}
+
+/* REPORTS */
+
+.report-toolbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 18px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    background: white;
+}
+
+.report-actions {
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+/* ATTENDANCE */
+
+.attendance-header,
+.attendance-panel,
+.attendance-table {
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    padding: 18px;
+}
+
+.attendance-form,
+.attendance-filters {
+
+    display: grid;
+
+    grid-template-columns: repeat(5, minmax(140px, 1fr));
+
+    gap: 12px;
+}
+
+.attendance-filters {
+
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+}
+
+.chart-card {
+
+    min-height: 360px;
+}
+
+.status-pill {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 78px;
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.status-present {
+
+    background: #d1e7dd;
+
+    color: #0f5132;
+}
+
+.status-absent {
+
+    background: #f8d7da;
+
+    color: #842029;
+}
+
+.status-late {
+
+    background: #fff3cd;
+
+    color: #664d03;
+}
+
+.status-leave {
+
+    background: #cff4fc;
+
+    color: #055160;
+}
+
+/* APPRAISALS */
+
+.appraisal-header,
+.appraisal-panel,
+.appraisal-table,
+.loading-panel {
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    padding: 18px;
+}
+
+.appraisal-form {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(160px, 1fr));
+
+    gap: 12px;
+}
+
+.appraisal-filters {
+
+    display: grid;
+
+    grid-template-columns: 2fr repeat(3, minmax(150px, 1fr));
+
+    gap: 12px;
+}
+
+.appraisal-comments {
+
+    min-height: 92px;
+
+    grid-column: span 3;
+}
+
+.leaderboard-card {
+
+    min-height: 360px;
+}
+
+.leaderboard-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.leaderboard-item:last-child {
+
+    border-bottom: 0;
+}
+
+.leaderboard-item small {
+
+    display: block;
+
+    color: #6b7280;
+}
+
+.rank-badge,
+.rating-chip {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 999px;
+
+    font-weight: 700;
+}
+
+.rank-badge {
+
+    width: 40px;
+
+    height: 40px;
+
+    background: #111827;
+
+    color: white;
+}
+
+.rating-chip {
+
+    min-width: 48px;
+
+    height: 34px;
+
+    background: #d1e7dd;
+
+    color: #0f5132;
+}
+
+.rating-pill {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 104px;
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.rating-5 {
+
+    background: #d1e7dd;
+
+    color: #0f5132;
+}
+
+.rating-4 {
+
+    background: #cfe2ff;
+
+    color: #084298;
+}
+
+.rating-3 {
+
+    background: #e2d9f3;
+
+    color: #432874;
+}
+
+.rating-2 {
+
+    background: #fff3cd;
+
+    color: #664d03;
+}
+
+.rating-1 {
+
+    background: #f8d7da;
+
+    color: #842029;
+}
+
+.pagination-bar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 16px;
+}
+
+.modal-backdrop-custom {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    background: rgba(15, 23, 42, 0.55);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.appraisal-modal {
+
+    width: min(860px, 100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 8px;
+
+    padding: 22px;
+}
+
+@media (max-width: 992px) {
+
+    .attendance-form,
+    .attendance-filters,
+    .appraisal-form,
+    .appraisal-filters,
+    .report-toolbar {
+
+        grid-template-columns: 1fr;
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .appraisal-comments {
+
+        grid-column: span 1;
+    }
+}
+
+/* CARDS */
+
+.card {
+
+    border: none;
+
+    border-radius: 18px;
+
+    transition: 0.3s ease;
+
+    background: white;
+}
+
+.card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* DARK MODE */
+
+.dark-mode {
+
+    background: #0f172a;
+
+    color: white;
+}
+
+.dark-mode .topbar {
+
+    background: #111827;
+
+    border-color: #1f2937;
+
+    color: white;
+}
+
+.dark-mode .card {
+
+    background: #111827;
+
+    color: white;
+}
+
+.dark-mode .notification-button,
+.dark-mode .notification-panel,
+.dark-mode .notification-item {
+
+    background: #111827;
+
+    border-color: #1f2937;
+
+    color: white;
+}
+
+.dark-mode .notification-item.unread {
+
+    background: #172554;
+}
+
+.dark-mode .notification-panel-header,
+.dark-mode .notification-item {
+
+    border-color: #1f2937;
+}
+
+.dark-mode .notification-mark-all {
+
+    background: #1f2937;
+
+    border-color: #374151;
+
+    color: white;
+}
+
+.dark-mode .notification-item p,
+.dark-mode .notification-item small,
+.dark-mode .notification-panel-header small,
+.dark-mode .notification-empty {
+
+    color: #cbd5e1;
+}
+
+.dark-mode .report-toolbar {
+
+    background: #111827;
+
+    border-color: #1f2937;
+
+    color: white;
+}
+
+.dark-mode .attendance-header,
+.dark-mode .attendance-panel,
+.dark-mode .attendance-table,
+.dark-mode .appraisal-header,
+.dark-mode .appraisal-panel,
+.dark-mode .appraisal-table,
+.dark-mode .loading-panel,
+.dark-mode .appraisal-modal {
+
+    background: #111827;
+
+    border-color: #1f2937;
+
+    color: white;
+}
+
+.dark-mode .leaderboard-item {
+
+    border-color: #1f2937;
+}
+
+.dark-mode .leaderboard-item small {
+
+    color: #cbd5e1;
+}
+
+.dark-mode .report-toolbar .text-muted {
+
+    color: #cbd5e1 !important;
+}
+
+.dark-mode .table {
+
+    color: white;
+}
+
+.dark-mode .table-dark {
+
+    background: #1e293b;
+}
+
+.dark-mode input {
+
+    background: #1e293b !important;
+
+    color: white !important;
+
+    border: none;
+}
+
+.dark-mode .form-control {
+
+    background: #1e293b;
+
+    color: white;
+}
+
+.dark-mode .sidebar {
+
+    background: #020617;
+}

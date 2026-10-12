@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Employee</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <div class="card shadow p-4">
+
+        <h2 class="mb-4">
+            Edit Employee
+        </h2>
+
+        <form action="/employees/update/<%= employee.id %>"
+              method="POST">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <label>Name</label>
+
+                    <input type="text"
+                           name="full_name"
+                           class="form-control"
+                           value="<%= employee.full_name %>"
+                           required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Email</label>
+
+                    <input type="email"
+                           name="email"
+                           class="form-control"
+                           value="<%= employee.email %>"
+                           required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Phone</label>
+
+                    <input type="text"
+                           name="phone"
+                           class="form-control"
+                           value="<%= employee.phone %>">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Department</label>
+
+                    <input type="text"
+                           name="department"
+                           class="form-control"
+                           value="<%= employee.department %>">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Position</label>
+
+                    <input type="text"
+                           name="position"
+                           class="form-control"
+                           value="<%= employee.position %>">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Salary</label>
+
+                    <input type="number"
+                           name="salary"
+                           class="form-control"
+                           value="<%= employee.salary %>">
+                </div>
+
+            </div>
+
+            <button class="btn btn-primary">
+                Update Employee
+            </button>
+
+            <a href="/employees"
+               class="btn btn-secondary">
+               Cancel
+            </a>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
